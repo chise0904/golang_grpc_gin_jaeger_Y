@@ -6,22 +6,22 @@ jaeger opentracing across microservices & between functions call
 
 # jaeger opentracing request chain
 
-http://127.0.0.1/ping                                  (X)
---> ping2()                                            (X)
---> ping3()                                            (X)
-  --> ping4()                                          (X)
-    --> http://172.17.0.4:8081/user/adam               (Y)
-      --> ping4()                                      (Y)
-        --> http://172.17.0.2:8080/users?name=barbara  (X)
+http://127.0.0.1/ping                                  (X)     
+--> ping2()                                            (X)     
+--> ping3()                                            (X)     
+  --> ping4()                                          (X)     
+    --> http://172.17.0.4:8081/user/adam               (Y)    
+      --> ping4()                                      (Y)     
+        --> http://172.17.0.2:8080/users?name=barbara  (X)     
 
 # Deps
 
-#go get "github.com/opentracing/opentracing-go"
-#go get "github.com/uber/jaeger-client-go"
-#go get "github.com/grpc-ecosystem/go-grpc-middleware"
-#go get "github.com/gin-gonic/gin"
-#go get "google.golang.org/grpc"
-#go get "github.com/uber/jaeger-lib/metrics/prometheus"
+#go get "github.com/opentracing/opentracing-go"       
+#go get "github.com/uber/jaeger-client-go"     
+#go get "github.com/grpc-ecosystem/go-grpc-middleware"       
+#go get "github.com/gin-gonic/gin"      
+#go get "google.golang.org/grpc"       
+#go get "github.com/uber/jaeger-lib/metrics/prometheus"    
 
 # jaeger
 
